@@ -1,103 +1,160 @@
+# 🌍 Credential Mapper
 
+### Helping skilled refugees turn their qualifications and experience into new opportunities.
 
+**PLP–ILO Mini-Hackathon 2026 | Credential Recognition & Skills Validation**
 
+🔗 **Live Website:** https://credential-mapper.vercel.app/  
+💻 **GitHub Repository:** https://github.com/Ubah1212/credential-mapper
 
+---
 
-Credential Mapper
-PLP–ILO Mini-Hackathon 2026 · Track 1: Credential Recognition & Skills Validation · SDGs 4 and 8
-Theme: Unlocking Displaced Talent: Pathways for Skilled Refugees
+## 💡 About the Project
 
-Credential Mapper is a web-based guidance tool that helps skilled refugees and the caseworkers supporting them in Kenya understand possible routes for having foreign qualifications assessed. A user enters a profile, qualification and the evidence they currently hold. The application then produces a suggested recognition pathway, a document checklist, a readiness status and practical next steps.
+Imagine spending years studying, earning qualifications and building professional skills, only to leave your home country and discover that proving those qualifications in a new country is not easy.
 
-Resource	Link
-Live application	credential-mapper.vercel.app
-Source repository	github.com/Ubah1212/credential-mapper
-Project status: Hackathon MVP / prototype. Credential Mapper provides navigation guidance; it does not issue qualification recognition, certification, professional registration, work permits or legal advice.
+This is a challenge many refugees and displaced professionals face.
 
-The problem
-Applicants with qualifications earned outside Kenya may need to navigate more than one assessment or professional body. The relevant route depends on the qualification level and field. The process can be difficult to understand when certificates are missing, the awarding institution cannot be reached, documents are in another language, or names differ between records.
+Some have lost their academic certificates. Others cannot contact their former schools or universities. Many simply do not know where to start or which organisation to approach.
 
-The project is based on the problem framing in the PLP–ILO Mini-Hackathon brief and the Kenyan recognition bodies referenced in the application's source library. Its purpose is to make the first steps easier to understand—not to replace decisions made by the relevant authorities.
+This is the problem I wanted to address when building **Credential Mapper**.
 
-How it works
-The user follows a four-stage workflow:
+Credential Mapper is a web-based application designed to help refugees and displaced professionals in Kenya understand how they can have their foreign qualifications assessed and recognised.
 
-Profile — enter a name or alias, country of origin, location in Kenya, identity document held, languages and goal (work, study or both).
-Qualification — enter the award title, institution, awarding country and year. The smart-fill helper looks for supported English and French keywords and patterns to suggest a qualification level and field. The user can review and change those suggestions.
-Evidence — indicate document language, whether names match, whether the institution is reachable and which documents or evidence are held.
-Credential map — review the suggested pathway, held/missing document checklist, readiness status, alternative-evidence suggestions and ordered next steps.
-What the map contains
-Suggested pathway: relevant assessment bodies and, where applicable, a professional regulator.
-Document checklist: required items marked as held or missing.
-Alternative evidence: guidance for selected missing items, such as contacting the institution, explaining a name difference, preparing work references or asking about RPL / the UNESCO Qualifications Passport where relevant.
-Readiness status: Ready to apply, Gather documents, Alternative evidence route or Skills recognition (RPL).
-Progress actions: next steps can be marked as complete.
-Supporting references: source tags are provided for relevant pathway bodies, next steps and alternative-evidence recommendations. The Sources page provides the wider source library.
-The readiness percentage is the proportion of checklist items marked as held. It is not a probability of recognition, an equivalency score or a prediction of an authority's decision. The Home page's “about three minutes” wording is an intended workflow estimate, not a measured user-study result.
+Instead of leaving users confused about what to do next, the platform guides them through a series of simple steps and provides a personalised recognition pathway based on their qualifications and available documents.
 
-Recognition pathways represented
-The rules engine uses the entered qualification level and field to suggest relevant Kenyan bodies. Depending on the profile, these can include:
+My goal is simple: to help people understand their options, recognise the value of their skills and take practical steps towards further education and employment.
 
-KNEC — foreign school and certain post-school certificate equation.
-CUE — recognition and equation of foreign university awards.
-KNQA — alignment and validation to the Kenya National Qualifications Framework (KNQF), and Recognition of Prior Learning (RPL).
-Professional regulators — examples in the current rules include NCK, KMPDC, EBK and TSC.
-Other professional bodies — CLE, KASNEB / ICPAK and the Clinical Officers Council appear in relevant routes with a confirm directly qualification where detailed requirements were not verified in this version.
-The rules are navigation suggestions, not a guarantee that an authority will accept an application or that the displayed sequence is mandatory in every case. References to RPL and the UNESCO Qualifications Passport are prompts to ask the relevant organisations about eligibility and availability; the app does not submit applications or integrate with those organisations.
+## 🎯 The Problem We Are Solving
 
-Features
-Applicant experience
-Four-step guided mapping flow.
-Keyword-based English and French qualification-title suggestions.
-User-editable qualification level and professional field.
-Evidence checklist tailored to the entered profile.
-Readiness status and document-completion percentage.
-Alternative-evidence suggestions for selected missing documents.
-Progress checkboxes for ordered next steps.
-Edit answers and regenerate a map.
-Copy a text summary, download the map as JSON, or print / save it as PDF through the browser.
-Records / caseworker view
-View multiple records saved in the current browser profile.
-See readiness-status counts, document gaps and next-step completion indicators for those records.
-Identify the three most common missing-document categories in the current records.
-Open or delete an individual record.
-Export the current browser's records as CSV.
-Records are not shared across users or devices. The Records page is a local, single-browser view, not a multi-user case-management system.
+Refugees do not leave their knowledge, education and professional experience behind when they are displaced. However, accessing opportunities in a new country can be difficult when their qualifications are not recognised.
 
-Demonstration profiles
-The application includes four fictional sample profiles: Achol, Hodan, Espoir and Jean. They are illustrative test data, not real applicants, testimonials or evidence of user outcomes.
+Some of the challenges include:
 
-Privacy, safety and limitations
-The current prototype is intentionally lightweight:
+- Missing certificates or academic transcripts.
+- Difficulty contacting previous schools and universities.
+- Uncertainty about where to submit foreign qualifications.
+- Language differences in academic documents.
+- Differences in names across official documents.
+- Limited information about alternative ways to demonstrate skills and experience.
 
-No account or sign-in is required.
-Identity or qualification document files are not uploaded by the application.
-Records are saved in the browser's localStorage for the browser profile and device in use. They are not synchronised to a server or shared with another caseworker.
-This application does not encrypt local-storage records. Anyone with access to the same browser profile may be able to view them. Avoid entering sensitive personal information on shared devices; use fictional demo profiles during public demonstrations and delete records when finished.
-If browser storage is unavailable, the application can continue in memory for the current session, but records may not persist after the page is closed.
-There is no backend, central database, account system, role-based access, audit log or partner administration panel in this MVP.
-The application does not verify documents, contact institutions, submit applications, make official equivalency decisions or guarantee access to a job, permit or professional licence.
-Requirements, fees, portals and programme availability can change. Users should confirm details with the named authorities before relying on a suggested route or paying a fee.
-No pilot adoption, recognition, employment or user-outcome figures are claimed. These would need to be measured in a properly designed pilot.
-Technology and architecture
-Frontend: React 18, JavaScript, HTML and CSS.
-Build tooling: Vite 5.
-Mapping logic: a pure JavaScript rules engine in src/engine/mapper.js.
-Source data: source links and support notes in src/data/sources.js.
-Demo data: fictional profiles in src/data/samples.js.
-Persistence and exports: browser storage and download helpers in src/storage.js.
-UI: components in src/components/ (Home, Wizard, Result, Records and Sources).
-Tests: Node.js assertions in tests/engine.test.js.
-See ARCHITECTURE.md for the application structure and data flow.
+These challenges can make it difficult for qualified people to continue their education or find work that matches their abilities.
 
+## 🚀 How Credential Mapper Helps
+
+Credential Mapper makes the first steps of the recognition process easier to understand.
+
+Users provide information about their education, professional background and the documents they currently have. The application then uses its qualification-mapping engine to suggest relevant recognition pathways and practical next steps.
+
+It helps users understand:
+
+- Which Kenyan recognition or professional bodies may be relevant.
+- What documents they already have.
+- What documents they may still need.
+- What alternative evidence they could explore.
+- Which actions they can take next.
+
+The platform does not make official recognition decisions. It helps users understand where to start and how to move forward.
+
+## ⚙️ How It Works
+
+Using Credential Mapper is designed to be straightforward.
+
+### 1. Create Your Profile
+
+The user starts by providing basic information, such as their country of origin, current location and whether they are seeking employment or further education.
+
+### 2. Add Your Qualifications
+
+The user enters their qualification title, institution, country and year of completion.
+
+The application can recognise common English and French qualification titles and suggest a possible qualification level and professional field.
+
+### 3. Check Your Documents
+
+The user indicates which documents they have, such as certificates, transcripts and identification documents.
+
+The application also considers situations where documents are missing, institutions cannot be reached or names do not match.
+
+### 4. Generate Your Credential Map
+
+Once the information is submitted, Credential Mapper creates a personalised result containing:
+
+- A suggested recognition pathway.
+- A document checklist.
+- Missing-document information.
+- A readiness assessment.
+- Alternative evidence suggestions.
+- Recommended next steps.
+- Supporting source references.
+
+The idea is to give every user a clearer starting point instead of expecting them to figure out the entire process alone.
+
+## ✨ What Can You Do With Credential Mapper?
+
+### For Applicants
+
+- Create a personal qualification profile.
+- Enter educational and professional information.
+- Get suggestions for qualification levels and professional fields.
+- Explore relevant recognition pathways.
+- Identify missing documents.
+- Explore alternative evidence options, including Recognition of Prior Learning (RPL), where applicable.
+- Track progress through recommended actions.
+- Copy or print a credential map.
+- Download results in JSON format.
+
+### For Caseworkers
+
+Credential Mapper also includes a Records dashboard to help demonstrate how applicant information could be organised.
+
+Caseworkers can:
+
+- View saved applicant records.
+- Check readiness statuses.
+- Identify common documentation gaps.
+- Monitor completed next steps.
+- Open individual credential maps.
+- Export records into CSV format.
+
+Currently, these records are stored in the browser being used. Shared caseworker accounts and a central database are planned for future development.
+
+## 🇰🇪 Understanding Kenya's Recognition System
+
+One of the important parts of this project is helping users understand which organisations may be relevant to their qualifications.
+
+Credential Mapper includes guidance involving organisations such as:
+
+| Organisation | What it does |
+|---|---|
+| KNEC | Handles equation of certain foreign educational qualifications |
+| CUE | Handles recognition and equation of foreign university qualifications |
+| KNQA | Works on qualifications framework alignment and Recognition of Prior Learning |
+| NCK | Regulates nursing professionals |
+| KMPDC | Regulates medical and dental professionals |
+| EBK | Regulates engineering professionals |
+| TSC | Regulates teachers |
+
+The appropriate organisation depends on the qualification and profession.
+
+Users should always confirm the latest requirements directly with the relevant organisation.
+
+## 🛠️ Technology Behind the Project
+
+I built Credential Mapper using technologies that make it lightweight and suitable for further development.
+
+- **React 18** – Builds the interactive user interface.
+- **JavaScript** – Handles the qualification-mapping logic.
+- **Vite 5** – Provides the development and build environment.
+- **HTML5 and CSS3** – Structure and style the application.
+- **Browser Local Storage** – Saves records locally.
+- **Vercel** – Hosts the live application.
+
+### Project Structure
+
+```text
 credential-mapper/
-├── .github/
-│   └── workflows/
-│       ├── ci.yml
-│       └── deploy.yml
-├── docs/
-│   ├── ARCHITECTURE.md
-│   └── SUBMISSION.md
+│
 ├── src/
 │   ├── components/
 │   │   ├── Home.jsx
@@ -105,81 +162,149 @@ credential-mapper/
 │   │   ├── Result.jsx
 │   │   ├── Records.jsx
 │   │   └── Sources.jsx
+│   │
 │   ├── data/
 │   │   ├── samples.js
 │   │   └── sources.js
+│   │
 │   ├── engine/
 │   │   └── mapper.js
+│   │
 │   ├── App.jsx
 │   ├── main.jsx
 │   ├── storage.js
 │   └── styles.css
+│
 ├── tests/
 │   └── engine.test.js
+│
 ├── index.html
 ├── package.json
 └── vite.config.js
-Run locally
-Prerequisite: Node.js 18 or later. The GitHub Actions workflows use Node.js 20.
+```
 
-git clone https://github.com/Ubah1212/credential-mapper.git
-cd credential-mapper
-npm ci
-npm run dev
-Vite prints the local development URL in the terminal (normally http://localhost:5173).
+## 🔐 Privacy Matters
 
-Available scripts
-Command	Purpose
-npm run dev	Start the Vite development server.
-npm test	Run the mapping-engine test suite.
-npm run build	Build the production site into dist/.
-npm run preview	Preview the production build locally.
-Before submitting a change, run:
+People using this platform may have sensitive personal and educational information. That is why the current prototype is designed to work without requiring users to create accounts or upload their academic documents.
 
-npm ci
+Currently:
+
+- No account registration is required.
+- Users can use an alias.
+- Academic and identity documents are not uploaded.
+- Records are saved in the user's browser.
+- No central database is required.
+
+**A note about security:** Browser storage is not encrypted by the application. Anyone with access to the same browser profile may potentially view saved records. Users should avoid entering sensitive information on shared devices.
+
+## 🧪 Testing
+
+I included automated tests to check whether the qualification-mapping engine behaves as expected.
+
+The tests cover qualification detection, recognition pathways, missing documents, alternative evidence, readiness calculations and source references.
+
+**Current test result: 9 out of 9 tests passed.**
+
+To run the tests:
+
+```bash
 npm test
+```
+
+To create a production build:
+
+```bash
 npm run build
-Deployment
-The live project is published at credential-mapper.vercel.app. The project uses Vite and can be deployed to Vercel or another static host that supports a Vite build. The included ci.yml workflow checks changes on GitHub; the existing deploy.yml workflow is an optional GitHub Pages deployment path when GitHub Pages is configured for the repository.
+```
 
-For Vercel, import the GitHub repository as a project and use the standard Vite settings:
+## 💻 Run the Project Locally
 
-Framework preset: Vite
-Build command: npm run build
-Output directory: dist
-Install command: npm ci
-Maintaining recognition rules and sources
-The current guidance is maintained in code:
+Would you like to explore the code or contribute to the project? Follow these steps.
 
-Edit src/engine/mapper.js to change qualification patterns, pathway selection, document requirements, readiness logic, alternatives or next steps.
-Edit src/data/sources.js to change source URLs, supporting notes, verification labels or LAST_CHECKED.
-Edit src/data/samples.js only for fictional demonstration profiles.
-When guidance changes:
+**1. Clone the repository**
 
-Check the requirement directly with the relevant official body.
-Update the supporting source entry and its verification status / last-checked date.
-Update the related mapping rule if needed.
-Add or update tests for the affected cases.
-Run npm test and npm run build.
-Review the suggested pathway and wording before merging and redeploying.
-The source library in this project snapshot records 26 November 2026 as its last-checked date. Do not advance that date unless the referenced guidance has actually been rechecked.
+```bash
+git clone https://github.com/Ubah1212/credential-mapper.git
+```
 
-Roadmap
-These are planned improvements, not current MVP capabilities:
+**2. Open the project folder**
 
-Kiswahili, French, Arabic and Somali interface translations.
-Consent-based user accounts and shared caseworker records across devices.
-A secure backend with role-based access, encryption, retention and deletion controls, and audit logs.
-A partner review process for changes to recognition rules and source references.
-Employer-facing skill portfolios for fields that do not require professional licensing.
-Partner-verified fees and processing-time information.
-Pilot evaluation of usability, time to first clear pathway, evidence-gap resolution and progress toward recognition or employment.
-Contributing
-Bug reports, corrections to source references and carefully scoped improvements are welcome. Please read CONTRIBUTING.md before opening a pull request.
+```bash
+cd credential-mapper
+```
 
-Built for the PLP–ILO Mini-Hackathon 2026 (Power Learn Project × ILO PROSPECTS) · Track 1: Credential Recognition & Skills Validation · SDGs 4 and 8.
+**3. Install dependencies**
 
+```bash
+npm install
+```
 
+**4. Start the development server**
 
+```bash
+npm run dev
+```
 
+Open the local address shown in your terminal, usually:
 
+```text
+http://localhost:5173
+```
+
+## 🌱 What's Next?
+
+Credential Mapper is currently a working MVP. There is still a lot of room to improve it, and I see several opportunities to make it more useful.
+
+Some of the improvements I would like to work on include:
+
+- **More languages:** Adding Somali, Kiswahili, Arabic and other languages to make the platform accessible to more refugees.
+- **A secure database:** Allowing users to access their records across different devices.
+- **Caseworker accounts:** Helping organisations manage cases through secure shared access.
+- **Better recognition guidance:** Working with relevant organisations and experts to keep information accurate and updated.
+- **Employer connections:** Exploring ways to help employers understand the skills and experience of displaced professionals.
+- **Impact measurement:** Testing the platform with users and learning whether it genuinely makes the recognition journey easier.
+
+These are future goals, not features that are already available in the current version.
+
+## 🌍 The Bigger Picture
+
+Credential Mapper is connected to two Sustainable Development Goals:
+
+**SDG 4 – Quality Education**
+
+Because everyone should have a fair opportunity to continue learning, regardless of their background or displacement experience.
+
+**SDG 8 – Decent Work and Economic Growth**
+
+Because skilled people deserve opportunities to use their education, knowledge and experience.
+
+I believe that being displaced should not mean losing the opportunity to build a professional future.
+
+## ⚠️ Important Disclaimer
+
+Credential Mapper is an independent guidance tool. It does not issue certificates, officially recognise qualifications, grant professional registration or guarantee employment.
+
+All suggested pathways should be verified with the relevant Kenyan authorities and professional bodies.
+
+## 🤝 Project Information
+
+**Project:** Credential Mapper  
+**Programme:** Power Learn Project (PLP) – ILO Mini-Hackathon 2026  
+**Track:** Credential Recognition & Skills Validation  
+**Theme:** Unlocking Displaced Talent – Pathways for Skilled Refugees  
+**Technology:** React, JavaScript and Vite  
+**Deployment:** Vercel
+
+🔗 **Try the application:** https://credential-mapper.vercel.app/
+
+💻 **Explore the source code:** https://github.com/Ubah1212/credential-mapper
+
+---
+
+### A Final Thought
+
+I built Credential Mapper around a simple belief: refugees and displaced professionals have skills, knowledge and potential that should not be overlooked simply because their qualifications are difficult to verify.
+
+This project is my attempt to make that journey a little clearer, one step at a time.
+
+**Skills do not disappear when people are displaced. Opportunities should not disappear either.** 🌍
