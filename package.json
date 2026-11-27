@@ -1,0 +1,21 @@
+{
+  "name": "credential-mapper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Credential Mapper: map a refugee's foreign qualification to Kenyan recognition pathways and get a missing-document checklist (PLP–ILO Mini-Hackathon, Track 1).",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node tests/engine.test.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^5.4.21"
+  }
+}
